@@ -43,6 +43,8 @@
 #   Array of IP addrs or ACLs to allow transfer to. Default: empty
 #  $check_names:
 #   Array of check-names strings. Example: [ 'master ignore' ]. Default: empty
+#  $logging_enable:
+#   Set to false to exclude the default logging clause. Default: true
 #  $extra_options:
 #   Hash for any additional options that must go in the 'options' declaration.
 #   Default: empty
@@ -118,6 +120,7 @@ define bind::server::conf (
   $keys                   = {},
   $includes               = [],
   $views                  = {},
+  $logging_enable         = true,
 ) {
 
   # Everything is inside a single template
